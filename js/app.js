@@ -31,6 +31,7 @@ function Particle() {
     this.speed = Math.round(Math.random() / 5) + 15;
 
     var rand = Math.random();
+    // random speed
     this.rainDrop = rand < 0.33 ? $("#raindrop1").get(0) : rand < 0.66 ? $("#raindrop2").get(0) : $("#raindrop3").get(0);
 }
 

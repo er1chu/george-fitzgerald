@@ -1,10 +1,10 @@
 var context = null;
 var particleArray = [];
 var particleTimer = null;
-var maxParticleCount = 300;
+var maxParticleCount = 200;
 var animTimerId;
 
-$(document).ready(function () { initRainCanvas(200); });
+$(document).ready(function () { initRainCanvas(10); });
 
 function initRainCanvas(interval) {
     context = $(".rainCanvas").get(0).getContext("2d");
@@ -27,11 +27,11 @@ function addParticle() {
 function Particle() {
     this.x = Math.round(Math.random() * context.canvas.width);
     this.y = -10;
-    this.drift = 4;
-    this.speed = Math.round(Math.random() / 5) + 15;
+    this.drift = 10;
+    // this.speed = Math.round(Math.random() / ) + 15;
+    this.speed = Math.floor(Math.random() / 10) + 10;
 
     var rand = Math.random();
-    // random speed
     this.rainDrop = rand < 0.33 ? $("#raindrop1").get(0) : rand < 0.66 ? $("#raindrop2").get(0) : $("#raindrop3").get(0);
 }
 

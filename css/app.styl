@@ -21,10 +21,15 @@ webfont(family, file, hack-chrome-windows = false, weight = 'normal')
 				font-family family
 				src url(font-url(file + '.svg#'+ family)) format('svg')
 
+$backgroundColor = rgba(245,245,225,1)
+$secondaryColor = #404f52
+
 body, html
 	width: 100%
 	height: 100%
-	background: #000
+	background: $backgroundColor
+	overflow-x: hidden
+	white-space nowrap
 
 webfont('Otiz', 'otiz', true, 'normal')
 
@@ -38,9 +43,12 @@ webfont('Otiz', 'otiz', true, 'normal')
 
 .wrapper
 	z-index: 999
-	width: 80%
+	width: 100%
+	height: 100%
+	background: url('../img/backrain2.svg');
+	box-sizing: border-box
 	position: absolute
-	background: transparent
+	animation: backRain 80s linear infinite
 	top: 50%
 	left: 50%
 	transform: translate(-50%,-50%)
@@ -56,25 +64,54 @@ webfont('Otiz', 'otiz', true, 'normal')
 	width: 100%
 	display: inline-block
 	text-align: center
-	color: #fff
+	color: $secondaryColor
 	font-size: 122px
 	font-family: 'Otiz'
 
 .testRain
-	width: 10%
-	height: 10%
-	border-radius: 50%
-	
+	width: 100%
+	height: 100%
+	animation: testRain 27s linear infinite
+	position: absolute
+
+	img
+		width: 110%
+
+.testRain2
+	width: 100%
+	height: 100%
+	animation: testRain2 35s linear infinite
+	position: absolute
+	transform: translate3d(-120%,-120%,0)
+
+	img
+		width: 110%
+
 
 
 @keyframes testRain {
-	0% {top: 0%; left: 0%;}
-	50% {top:50%;left:50%;}
-	100% {top:100%;left:100%;}
+	0% {transform: translate3d(0,0,0)}
+	100% {transform: translate3d(100%,100%,0)}
 }
 
+@keyframes backRain {
+	0% {background-position: 0% 0%;}
+	100% {background-position: 4000px 4000px;}
+}
 
+@keyframes testRain2 {
+	0% {transform: translate3d(-120%,-100%,0)}
+	100% {transform: translate3d(120%,100%,0)}
+}
 
+@keyframes marquee {
+  from {
+    transform translateX(0)
+  }
+  to {
+    transform translateX(-100%)
+  }
+}
 
 
 

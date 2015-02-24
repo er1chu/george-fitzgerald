@@ -8,7 +8,7 @@ $(document).ready(function(){
             /* If the object is completely visible in the window, fade it it */
             if( bottom_of_window - bottom_of_object > 0 ){
                 
-                $(this).animate({'opacity':'1'},500);
+                $(this).animate({'opacity':'1'},1500);
                     
             }
             

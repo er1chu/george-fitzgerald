@@ -28,18 +28,23 @@ $orang = #ff4e17
 $gree = #08b462
 $pastel = #c2d1f2
 $headline = 75px
-$headline2 = 30px
+$headline2 = 25px
+$headline3 = 25px
 $bodyWidth = 700px
 $spacing = 60px
-
+$lineHeight2 = 32px
+$lineHeight = 85px
 
 body, html
 	width: 100%
-	height: 100%
+	height: auto
 	background: $backgroundColor
 	overflow-x: hidden
+	font-size: $headline2
+	line-height: $lineHeight2
 	white-space nowrap
 	font-family: 'Otiz'
+	-webkit-font-smoothing: antialiased
 
 webfont('Otiz', 'otiz', true, 'normal')
 
@@ -54,8 +59,8 @@ webfont('Otiz', 'otiz', true, 'normal')
 .wrapper
 	z-index: 999
 	width: 100%
-	height: 100%
-	background: url('../img/backrain2.svg');
+	height: auto
+	background: url('../img/backrain2.svg') repeat;
 	box-sizing: border-box
 	position: absolute
 	animation: backRain 80s linear infinite
@@ -67,10 +72,13 @@ webfont('Otiz', 'otiz', true, 'normal')
 	img
 		display:block
 		margin: 0 auto
-		padding-bottom: 20px
+		padding: 20px 0
+		#george-rule
+			margin-top: -10px !important
 .content
 	width: $bodyWidth
-	margin: 0 auto
+	margin: 120% auto 0 auto
+	text-align: center
 
 .video
 	margin 0 auto
@@ -85,18 +93,27 @@ webfont('Otiz', 'otiz', true, 'normal')
 	text-align: center
 	color: $secondaryColor
 	font-size: $headline
+	line-height: $lineHeight
 
 .links
-	margin: $spacing auto
-	font-size: $headline2
-	color: $secondaryColor
-	position: absolute
+	margin: $spacing 0
+	font-size: $headline3
+	letter-spacing: 0.03em
+	width: 600px
+	position: relative
 	left: 50%
 	transform: translateX(-50%)
 	ul
 		li
 			display: inline-block
-			width: calc( 600px / 3)
+			width: 33.333%
+	abbr
+		font-size $headline2 - 3px
+		letter-spacing: 0.1em
+.default-color
+	color: $secondaryColor
+.purp
+	color: $purp
 .left-li
 	text-align: left
 .center-li
@@ -123,6 +140,26 @@ webfont('Otiz', 'otiz', true, 'normal')
 	img
 		width: 110%
 
+.announcement
+	color: $purp
+	font-size: $headline2
+	letter-spacing: 0.03em
+
+	.album-title
+		font-size: $headline
+		line-height: $lineHeight
+
+section
+	margin-bottom: $spacing * 2
+
+.release-date
+	color: $orang
+.tracklist
+	color: $gree
+	letter-spacing: 0.03em
+	li
+		list-style: none
+		text-align: center
 
 
 @keyframes testRain {
